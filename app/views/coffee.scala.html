@@ -1,0 +1,21 @@
+@(coffeForm: Form[Coffees])
+
+
+<html>
+    <head>
+        <title>Dummy Form example</title>
+    </head>
+    <body>
+    @helper.form(action = routes.Application.addNewCoffee) {
+        @helper.inputText(coffeForm("cof_name"))
+        @helper.inputText(coffeForm("sup_id"))
+        @helper.inputText(coffeForm("price"))
+        @helper.inputText(coffeForm("sales"))
+        @helper.inputText(coffeForm("total"))
+        <input type="submit">
+        }
+    </body>
+</html>
+
+
+

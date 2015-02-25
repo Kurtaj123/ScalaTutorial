@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                    controllers.Application.getAllCoffees
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file        controllers.Assets.at(path="/public", file)
+
+
+
+
+GET         /coffee              controllers.Application.getAllCoffees
+
+
+POST        /add                 controllers.Application.addNewCoffee
+GET         /addForm             controllers.Application.addCoffeeForm
+
+POST        /addForm/:id/delete  controllers.Application.deleteCoffee(id: Int)

@@ -1,0 +1,21 @@
+@(message: List[Coffees])
+
+@main("Hello") {
+    <h1>@message.size Coffee(s)</h1>
+
+
+    @for((item, index) <- message.zipWithIndex) {
+        <li>Item @index is @item</li>
+
+        @helper.form(routes.Application.deleteCoffee(item.sup_id)) {
+            <input type="submit" value="Delete">
+        }
+
+    }
+
+    <h2>Add a new task</h2>
+    @helper.form(routes.Application.addCoffeeForm) {
+        <input type="submit" value="Create">
+    }
+}
+
